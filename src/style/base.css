@@ -1,0 +1,60 @@
+:root {
+    --header-bg: #404040;
+    --header-cl: #fff;
+    
+    --btn-model1-bg: #00000000;
+    --btn-model1-bd: 1px solid ;
+
+    --main-bg: #606060;
+
+    --font-default: sans-serif;
+}
+
+*, h1, h2, h3, h4, h5, h6, button, ul, li {
+    font-family: var(--font-default);
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+button.disabled {
+    cursor: default;
+}
+
+.btn-model1 {
+    background: var(--btn-model1-bg);
+    border: 1px solid #000;
+    border-radius: 5px;
+    animation-name: buttonRgb;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    padding: .5em 1em;
+}
+
+.btn-model1:hover {
+    background: #00000020;
+    box-shadow: 0 0 3px 1px #000;
+}
+
+@keyframes borderRgb {
+    0% { border-color: #d00; }
+    33% { border-color: #0d0; }
+    66% { border-color: #00d; }
+    100% { border-color: #d00; }
+}
+
+@keyframes colorRgb {
+    0% { color: #d00; }
+    33% { color: #0d0; }
+    66% { color: #00d; }
+    100% { color: #d00; }
+}
+
+@keyframes buttonRgb {
+    0% { border-color: #d00; color: #d00; }
+    33% { border-color: #0d0; color: #0d0; }
+    66% { border-color: #00d; color: #00d; }
+    100% { border-color: #d00; color: #d00; }
+}

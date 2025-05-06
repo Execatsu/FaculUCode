@@ -1,0 +1,140 @@
+body {
+    min-height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+body > header {
+    background: var(--header-bg);
+    padding: 1em;
+    position: fixed;
+    width: 100vw;
+    height: 4em;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    animation-name: borderRgb;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body > main {
+    padding-top: 4em;
+    min-height: 100vh;
+    background: var(--main-bg);
+}
+
+/* TODO */
+body > header > h1 {
+    color: var(--header-cl);
+    font-weight: bold;
+    cursor: pointer;
+}   
+
+
+/* MENU */
+.menuNav {
+    display: flex;
+    color: var(--header-cl);
+}
+
+.menuNav > ul > li {
+    cursor: pointer;
+}
+
+.menuNav > .menuNavBtn {
+    display: none;
+}
+
+.menuNav > ul {
+    display: flex;
+    gap: 15px;
+}
+
+@media screen and (max-width: 375px) {
+    .menuNav > .menuNavBtn {
+        display: block;
+    }
+
+    .menuNav.disabled  ul {
+        display: none;
+    }
+
+    .menuNavBtn {
+        position: relative;
+    }
+    
+    .menuNavBtn-icon {
+        display: inline-block;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        position: relative;
+    }
+    
+    .menuNavBtn-icon span {
+        background: var(--header-cl);
+        display: block;
+        height: 2px;
+        margin: 5px 0;
+        border-radius: 3px;
+        transition: 0.4s;
+    }
+    
+    /* animação para o X */
+    #menuNavBtn-toggle:checked + .menuNavBtn-icon span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    #menuNavBtn-toggle:checked + .menuNavBtn-icon span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    #menuNavBtn-toggle:checked + .menuNavBtn-icon span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
+    /* Remover checkbox visível */
+    #menuNavBtn-toggle {
+        display: none;
+    }
+      
+
+
+
+
+
+
+
+    .menuNav > ul {
+        background: var(--header-bg);
+        position: absolute;
+        top: calc(100%);
+        left: 0;
+        width: 100%;
+        border-bottom: 2px solid #000;
+        animation-name: borderRgb;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        display: flex;
+        flex-direction: column;
+        gap: .7em;
+        padding-bottom: 1em;
+    }
+
+    .menuNav > ul > li {
+        margin-left: 1em;
+    }
+    
+}
+
+@media screen and (max-width: 768px){
+    
+    
+}
+
+@media screen and (max-width: 1024px) {
+}
